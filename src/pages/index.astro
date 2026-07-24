@@ -1,9 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SeriesCard from "../components/SeriesCard.astro";
 ---
 
 <BaseLayout>
-  <h1>海洋 Minecraft Resources</h1>
+  <Hero />
 
-  <p>分享 Minecraft 世界、建築、模組與創作。</p>
+  <section>
+    <h2>我的系列</h2>
+
+    <div class="series-grid">
+      <SeriesCard
+        title="生存世界系列"
+        description="建造大型建築、生電機器，分享世界與 Schematics。"
+        emoji="🏠"
+        href="/survival/"
+      />
+
+      <SeriesCard
+        title="模組探索系列"
+        description="探索不同模組與模組包，分享有趣玩法與設定。"
+        emoji="🧩"
+        href="/mods/"
+      />
+    </div>
+  </section>
 </BaseLayout>

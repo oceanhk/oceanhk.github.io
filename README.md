@@ -68,10 +68,10 @@ npm run preview
 ```
 public/
 src/
-├── assets/
 ├── components/
 ├── layouts/
-└── pages/
+├── pages/
+└── styles/
 ```
 
 ---

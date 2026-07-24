@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  emoji: string;
+  href: string;
+}
+
+const { title, description, emoji, href } = Astro.props;
+---
+
+<a class="series-card" href={href}>
+  <div class="series-icon">{emoji}</div>
+
+  <h2>{title}</h2>
+
+  <p>{description}</p>
+</a>
