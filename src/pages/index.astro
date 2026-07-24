@@ -7,7 +7,7 @@ import SeriesCard from "../components/SeriesCard.astro";
 <BaseLayout>
   <Hero />
 
-  <section>
+  <section class="section">
     <h2>我的系列</h2>
 
     <div class="series-grid">
@@ -24,6 +24,164 @@ import SeriesCard from "../components/SeriesCard.astro";
         emoji="🧩"
         href="/mods/"
       />
+    </div>
+  </section>
+  <section class="section">
+    <h2>關於海洋</h2>
+
+    <article>
+      <h3>🤔 我是誰</h3>
+
+      <p>
+        我是海洋，一位主要使用粵語創作的 Minecraft YouTuber， 希望透過影片分享
+        Minecraft 的樂趣。
+      </p>
+
+      <p>
+        我喜歡研究遊戲機制、建造大型建築、
+        探索不同模組，以及挑戰各種有趣的玩法。
+      </p>
+    </article>
+
+    <article>
+      <h3>🎯 為什麼建立這個網站</h3>
+
+      <p>
+        每部影片都可能使用不同的模組、 Resource Pack、Shader、Datapack 或設定。
+      </p>
+
+      <p>
+        YouTube 說明欄能放的內容有限，
+        因此我建立了這個網站，把所有資源集中整理， 方便大家查找及下載。
+      </p>
+    </article>
+
+    <article>
+      <h3>📌 在這裡你可以找到</h3>
+
+      <ul>
+        <li>每個系列的完整介紹</li>
+        <li>每部影片的專屬頁面</li>
+        <li>模組與版本資訊</li>
+        <li>世界設定</li>
+        <li>Resource Pack</li>
+        <li>Datapack</li>
+        <li>Shader</li>
+        <li>更新紀錄</li>
+      </ul>
+    </article>
+  </section>
+  <section class="section">
+    <h2>頻道特色</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>沉浸式剪接</h3>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🫠</div>
+        <h3>休閒放鬆</h3>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>發現冷知識</h3>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>模組探索</h3>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👀</div>
+        <h3>強迫症狂喜</h3>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗣️</div>
+        <h3>粵語旁白</h3>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Minecraft 能力值</h2>
+
+    <div class="skill-group">
+      <h3>🏕️ 生存玩法</h3>
+
+      <div class="skill-item">
+        <span>🌍 生存</span>
+        <span>🟩🟩⬜⬜⬜</span>
+      </div>
+
+      <div class="skill-item">
+        <span>⚡ 生電</span>
+        <span>🟩🟩🟩⬜⬜</span>
+      </div>
+
+      <div class="skill-item">
+        <span>🏗️ 建築</span>
+        <span>🟩🟩⬜⬜⬜</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>⚙️ 技術玩法</h3>
+
+      <div class="skill-item">
+        <span>🔴 紅石</span>
+        <span>🟩🟩⬜⬜⬜</span>
+      </div>
+
+      <div class="skill-item">
+        <span>💻 指令</span>
+        <span>🟩🟩⬜⬜⬜</span>
+      </div>
+
+      <div class="skill-item">
+        <span>🧩 模組</span>
+        <span>🟩🟩🟩⬜⬜</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>🎮 挑戰玩法</h3>
+
+      <div class="skill-item">
+        <span>🏃 速通</span>
+        <span>🟩⬜⬜⬜⬜</span>
+      </div>
+
+      <div class="skill-item">
+        <span>🦘 跑酷</span>
+        <span>🟩⬜⬜⬜⬜</span>
+      </div>
+
+      <div class="skill-item">
+        <span>⚔️ PvP</span>
+        <span>🟩⬜⬜⬜⬜</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>最新影片</h2>
+
+    <div class="latest-video">
+      <div class="video-card">
+        <div class="video-thumbnail">Coming Soon</div>
+
+        <div class="video-content">
+          <h3>最新影片將於這裡顯示</h3>
+
+          <p>
+            日後將自動連結到最新發布的 Minecraft 影片，
+            並提供完整資源、模組與下載資訊。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
