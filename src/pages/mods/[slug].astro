@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import VideoLayout from "../../layouts/VideoLayout.astro";
+import YouTubeEmbed from "../../components/YouTubeEmbed.astro";
 
 export async function getStaticPaths() {
   const episodes = await getCollection("mods");
@@ -33,13 +34,7 @@ const { Content } = await render(episode);
   <section class="section">
     <h2>🎬 YouTube</h2>
 
-    <div class="video-container">
-      <iframe
-        src={`https://www.youtube.com/embed/${episode.data.youtube}`}
-        title={episode.data.title}
-        allowfullscreen
-        loading="lazy"></iframe>
-    </div>
+    <YouTubeEmbed videoId={episode.data.youtube} title={episode.data.title} />
   </section>
 
   <section class="section">
