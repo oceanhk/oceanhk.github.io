@@ -1,7 +1,14 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import VideoCard from "../../components/VideoCard.astro";
+
+const episodes = await getCollection("survival");
+
+// 依集數排序
+episodes.sort((a, b) => a.data.episode - b.data.episode);
 ---
 
 <BaseLayout title="生存世界系列 | 海洋 Minecraft Resources">
@@ -44,33 +51,16 @@ import VideoCard from "../../components/VideoCard.astro";
     <h2>所有影片</h2>
 
     <div class="video-grid">
-      <VideoCard
-        episode="EP01"
-        title="第一集"
-        description="待更新。"
-        href="/survival/ep01/"
-      />
-
-      <VideoCard
-        episode="EP02"
-        title="第二集"
-        description="待更新。"
-        href="/survival/ep02/"
-      />
-
-      <VideoCard
-        episode="EP03"
-        title="第三集"
-        description="待更新。"
-        href="/survival/ep03/"
-      />
-
-      <VideoCard
-        episode="EP04"
-        title="第四集"
-        description="待更新。"
-        href="/survival/ep04/"
-      />
+      {
+        episodes.map((episode) => (
+          <VideoCard
+            episode={String(episode.data.episode).padStart(2, "0")}
+            title={episode.data.title}
+            description={episode.data.description}
+            href={`/survival/${episode.id}/`}
+          />
+        ))
+      }
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import VideoLayout from "../../layouts/VideoLayout.astro";
+
+export async function getStaticPaths() {
+  const episodes = await getCollection("survival");
+
+  return episodes.map((episode) => ({
+    params: {
+      slug: episode.id,
+    },
+    props: {
+      episode,
+    },
+  }));
+}
+
+const { episode } = Astro.props;
+const { Content } = await render(episode);
+---
+
+<VideoLayout title={episode.data.title}>
+  <section class="section">
+    <h1>
+      EP{String(episode.data.episode).padStart(2, "0")}｜{episode.data.title}
+    </h1>
+
+    <p>{episode.data.description}</p>
+  </section>
+
+  <section class="section">
+    <h2>🎬 YouTube</h2>
+
+    <div class="youtube-placeholder">YouTube Player（稍後加入）</div>
+  </section>
+
+  <section class="section">
+    <Content />
+  </section>
+</VideoLayout>

@@ -69,6 +69,7 @@ npm run preview
 public/
 src/
 ├── components/
+├── content/
 ├── layouts/
 ├── pages/
 └── styles/
