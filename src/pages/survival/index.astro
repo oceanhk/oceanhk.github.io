@@ -7,7 +7,6 @@ import VideoCard from "../../components/VideoCard.astro";
 
 const episodes = await getCollection("survival");
 
-// 依集數排序
 episodes.sort((a, b) => a.data.episode - b.data.episode);
 ---
 

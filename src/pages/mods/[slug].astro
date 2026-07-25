@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import VideoLayout from "../../layouts/VideoLayout.astro";
 
 export async function getStaticPaths() {
-  const episodes = await getCollection("survival");
+  const episodes = await getCollection("mods");
 
   return episodes
     .filter((episode) => !episode.data.draft)
