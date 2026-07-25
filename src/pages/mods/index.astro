@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import VideoCard from "../../components/VideoCard.astro";
+
+const episodes = await getCollection("mods");
+
+const publishedEpisodes = episodes
+  .filter((episode) => !episode.data.draft)
+  .sort((a, b) => a.data.episode - b.data.episode);
+---
+
+<BaseLayout title="模組探索系列">
+  <PageHero
+    title="🧩 模組探索系列"
+    description="探索各種 Minecraft 模組、模組包與不同玩法。"
+  />
+
+  <section class="section">
+    <h2>系列介紹</h2>
+
+    <p>
+      這個系列主要探索不同的 Minecraft 模組或模組包。
+      每一集都是獨立主題，因此可以從任何一集開始觀看。
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>常用資源</h2>
+
+    <ul>
+      <li>模組：待更新</li>
+      <li>資源包：待更新</li>
+      <li>光影：待更新</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>所有影片</h2>
+
+    <div class="video-grid">
+      {
+        publishedEpisodes.map((episode) => (
+          <VideoCard
+            episode={String(episode.data.episode).padStart(2, "0")}
+            title={episode.data.title}
+            description={episode.data.description}
+            href={`/mods/${episode.id}/`}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
