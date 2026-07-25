@@ -263,3 +263,75 @@ footer p {
   margin: 0 auto;
   color: #666;
 }
+
+/* ===== Video Cards ===== */
+
+.video-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.video-card {
+  display: flex;
+  gap: 20px;
+
+  background: white;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  padding: 20px;
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+}
+
+.video-thumbnail {
+  width: 160px;
+  height: 90px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #e8e8e8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+}
+
+.video-info {
+  flex: 1;
+}
+
+.video-info h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.video-info p {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.video-link {
+  color: #4f8cff;
+  font-weight: 600;
+}
+
+/* ===== Video Page ===== */
+
+.video-page {
+  max-width: 900px;
+
+  margin: 60px auto;
+}

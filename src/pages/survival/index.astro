@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
+import VideoCard from "../../components/VideoCard.astro";
 ---
 
 <BaseLayout title="生存世界系列 | 海洋 Minecraft Resources">
@@ -42,6 +43,34 @@ import PageHero from "../../components/PageHero.astro";
   <section class="section">
     <h2>所有影片</h2>
 
-    <p>（EP01～EP04）</p>
+    <div class="video-grid">
+      <VideoCard
+        episode="EP01"
+        title="第一集"
+        description="待更新。"
+        href="/survival/ep01/"
+      />
+
+      <VideoCard
+        episode="EP02"
+        title="第二集"
+        description="待更新。"
+        href="/survival/ep02/"
+      />
+
+      <VideoCard
+        episode="EP03"
+        title="第三集"
+        description="待更新。"
+        href="/survival/ep03/"
+      />
+
+      <VideoCard
+        episode="EP04"
+        title="第四集"
+        description="待更新。"
+        href="/survival/ep04/"
+      />
+    </div>
   </section>
 </BaseLayout>
