@@ -2,6 +2,16 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import SeriesCard from "../components/SeriesCard.astro";
+import { getCollection } from "astro:content";
+
+import VideoCard from "../components/VideoCard.astro";
+
+const survival = await getCollection("survival");
+const mods = await getCollection("mods");
+
+const latestVideo = [...survival, ...mods].sort(
+  (a, b) => b.data.published.getTime() - a.data.published.getTime(),
+)[0];
 ---
 
 <BaseLayout>
@@ -169,19 +179,17 @@ import SeriesCard from "../components/SeriesCard.astro";
   <section class="section">
     <h2>最新影片</h2>
 
-    <div class="latest-video">
-      <div class="video-card">
-        <div class="video-thumbnail">Coming Soon</div>
-
-        <div class="video-content">
-          <h3>最新影片將於這裡顯示</h3>
-
-          <p>
-            日後將自動連結到最新發布的 Minecraft 影片，
-            並提供完整資源、模組與下載資訊。
-          </p>
-        </div>
-      </div>
-    </div>
+    {
+      latestVideo ? (
+        <VideoCard
+          episode={String(latestVideo.data.episode).padStart(2, "0")}
+          title={latestVideo.data.title}
+          description={latestVideo.data.description}
+          href={`/${latestVideo.collection}/${latestVideo.id}/`}
+        />
+      ) : (
+        <p>目前沒有影片。</p>
+      )
+    }
   </section>
 </BaseLayout>

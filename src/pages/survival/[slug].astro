@@ -22,7 +22,9 @@ const { episode } = Astro.props;
 const { Content } = await render(episode);
 ---
 
-<VideoLayout title={episode.data.title}>
+<VideoLayout
+  title={`EP${String(episode.data.episode).padStart(2, "0")}｜${episode.data.title}`}
+>
   <section class="section">
     <h1>
       EP{String(episode.data.episode).padStart(2, "0")}｜{episode.data.title}
